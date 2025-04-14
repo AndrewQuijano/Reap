@@ -1,0 +1,14 @@
+{
+  "Software Firmware and Data":{
+    "None": 1.0,
+    "All RMF Controls": 0.20
+  },
+  "Hardware Components":{
+    "None": 1.0,
+    "All RMF Controls": 0.20
+  },
+  "Subsystems and Data Busses":{
+    "None": 1.0,
+    "All RMF Controls": 0.20
+  }
+}

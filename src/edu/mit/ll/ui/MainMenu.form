@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+DISTRIBUTION STATEMENT A. Approved for public release. Distribution is unlimited.
+This material is based upon work supported by the Dept of the Navy under Air
+Force Contract No. FA8702-15-D-0001 or FA8702-25-D-B002.
+Any opinions, findings, conclusions or recommendations expressed in this material
+are those of the author(s) and do not necessarily reflect the views of the Dept
+of the Navy.
+(c) 2024 Massachusetts Institute of Technology.
+The software/firmware is provided to you on an As-Is basis.
+Delivered to the U.S. Government with Unlimited Rights, as defined in DFARS Part
+252.227-7013 or 7014 (Feb 2014).
+Notwithstanding any copyright notice, U.S. Government rights in this work are
+defined by DFARS 252.227-7013 or DFARS 252.227-7014 as detailed above.
+Use of this work other than as specifically authorized by the U.S. Government may
+violate any copyrights that exist in this work.
+-->
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="edu.mit.ll.ui.MainMenu">
+<grid id="27dc6" binding="contentPane" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<margin top="10" left="10" bottom="10" right="10"/>
+<constraints>
+<xy x="20" y="20" width="400" height="476"/>
+</constraints>
+<properties/>
+<border type="none"/>
+<children>
+<component id="logo" class="javax.swing.JLabel">
+<constraints>
+</constraints>
+<properties>
+<icon value="edu/mit/ll/reap/res/reap_logo.png"/>
+</properties>
+</component>
+<component id="button1" class="javax.swing.JButton" binding="adjust_config">
+<constraints>
+<grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+</constraints>
+<properties>
+<text value="Adjust Basic Configuration"/>
+</properties>
+</component>
+<component id="button2" class="javax.swing.JButton" binding="adjust_weights">
+<constraints>
+<grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+</constraints>
+<properties>
+<text value="Adjust Security Property Weights"/>
+</properties>
+</component>
+<component id="button4" class="javax.swing.JButton" binding="run_simulation">
+<constraints>
+<grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+</constraints>
+<properties>
+<text value="Run Simulation"/>
+</properties>
+</component>
+<component id="button3" class="javax.swing.JButton" binding="set_blocks">
+<constraints>
+<grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+</constraints>
+<properties>
+<text value="Set Block Entry Points"/>
+</properties>
+</component>
+<component id="button6" class="javax.swing.JButton" binding="recompute">
+<constraints>
+<grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+</constraints>
+<properties>
+<text value="Recompute RTO/RPO on simulation"/>
+</properties>
+</component>
+<component id="button5" class="javax.swing.JButton" binding="exit">
+<constraints>
+<grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+</constraints>
+<properties>
+<text value="Exit"/>
+</properties>
+</component>
+</children>
+</grid>
+</form>

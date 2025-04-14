@@ -1,0 +1,94 @@
+Manifest-Version: 1.0
+Main-Class: com.nomagic.magicdraw.Main
+Class-Path: jfreechart-1.5.5.jar patch.jar brand.jar brand_api.jar md.ja
+ r md_api.jar launcher.jar akka-actor_2.13-2.6.20.jar akka-slf4j_2.13-2.
+ 6.20.jar angus-activation-2.0.1.jar animal-sniffer-annotations-1.9.jar 
+ annotation-1.11.jar annotations-3.0.0.jar asm-9.5.jar batik-all-1.16.ja
+ r bcprov-jdk18on-1.74.jar CATMBSESerialization-R2024x.v202309042146.jar
+  checker-qual-3.33.0.jar cmof-1.4.jar com.dassault_systemes.catia.mbse.
+ esi-2024.0.0.v20231003-0637.jar com.dassault_systemes.catia.mbse.esi.md
+ -2024.0.0.v20231003-0637.jar com.dassault_systemes.dsclient-2024.0.0-86
+ -7321dda1.jar com.dassault_systemes.modeler.foundation-2024.0.0-86-7321
+ dda1.jar com.nomagic.ci-2024.0.0-86-7321dda1.jar com.nomagic.ci.admin.l
+ ock.test.metamodel-2024.0.0-86-7321dda1.jar com.nomagic.ci.binary-2024.
+ 0.0-86-7321dda1.jar com.nomagic.ci.metamodel.project-2024.0.0-86-7321dd
+ a1.jar com.nomagic.ci.metamodel.querytest-2024.0.0-86-7321dda1.jar com.
+ nomagic.ci.persistence-2024.0.0-86-7321dda1.jar com.nomagic.ci.persiste
+ nce.local-2024.0.0-86-7321dda1.jar com.nomagic.ci.services-2024.0.0-86-
+ 7321dda1.jar com.nomagic.esi.announcement.client-2024.0.0.v20231003-063
+ 7.jar com.nomagic.esi.announcement.msg-2024.0.0.v20231003-0637.jar com.
+ nomagic.esi.api-2024.0.0.v20231003-0637.jar com.nomagic.esi.api.message
+ s-2024.0.0.v20231003-0637.jar com.nomagic.esi.client.core-2024.0.0.v202
+ 31003-0637.jar com.nomagic.esi.common-2024.0.0.v20231003-0637.jar com.n
+ omagic.esi.config-2024.0.0.v20231003-0637.jar com.nomagic.esi.core.msg-
+ 2024.0.0.v20231003-0637.jar com.nomagic.esi.emf-2024.0.0.v20231003-0637
+ .jar com.nomagic.esi.helper-2024.0.0.v20231003-0637.jar com.nomagic.esi
+ .indexer.client-2024.0.0.v20231003-0637.jar com.nomagic.esi.indexer.msg
+ -2024.0.0.v20231003-0637.jar com.nomagic.esi.net-2024.0.0.v20231003-063
+ 7.jar com.nomagic.esi.query.client-2024.0.0.v20231003-0637.jar com.noma
+ gic.esi.query.msg-2024.0.0.v20231003-0637.jar com.nomagic.esi.resourceu
+ pdate-2024.0.0-86-7321dda1.jar com.nomagic.esi.serializer-2024.0.0.v202
+ 31003-0637.jar com.nomagic.esi.serializer.akka-2024.0.0.v20231003-0637.
+ jar com.nomagic.esi.services.api-2024.0.0.v20231003-0637.jar com.nomagi
+ c.esi.services.client-2024.0.0.v20231003-0637.jar com.nomagic.esi.servi
+ ces.common-2024.0.0.v20231003-0637.jar com.nomagic.esi.stream-2024.0.0.
+ v20231003-0637.jar com.nomagic.globalusages.common-2024.0.0-86-7321dda1
+ .jar com.nomagic.magicdraw.ce-2024.0.0-86-7321dda1.jar com.nomagic.magi
+ cdraw.core.diagram-2024.0.0-86-7321dda1.jar com.nomagic.magicdraw.core.
+ project.options-2024.0.0-86-7321dda1.jar com.nomagic.magicdraw.elementr
+ eferenceintext-2024.0.0-86-7321dda1.jar com.nomagic.magicdraw.esi.binar
+ y.metamodel-2024.0.0-86-7321dda1.jar com.nomagic.magicdraw.esi.esiproje
+ ct-2024.0.0-86-7321dda1.jar com.nomagic.magicdraw.fileattachments-2024.
+ 0.0-86-7321dda1.jar com.nomagic.magicdraw.foundation-2024.0.0-86-7321dd
+ a1.jar com.nomagic.magicdraw.importexport-2024.0.0-86-7321dda1.jar com.
+ nomagic.magicdraw.modeling-2024.0.0-86-7321dda1.jar com.nomagic.magicdr
+ aw.patch-2024.0.0-86-7321dda1.jar com.nomagic.magicdraw.resourcedescrip
+ tor-2024.0.0-86-7321dda1.jar com.nomagic.magicdraw.security-2024.0.0-86
+ -7321dda1.jar com.nomagic.magicdraw.uml2-2024.0.0-86-7321dda1.jar com.n
+ omagic.text-2024.0.0-86-7321dda1.jar com.nomagic.umlresources-2024.0.0-
+ 86-7321dda1.jar com.nomagic.utils-2024.0.0-86-7321dda1.jar common-2024.
+ 0.0-86-7321dda1.jar commons-codec-1.15.jar commons-collections4-4.4.jar
+  commons-compress-1.21.jar commons-io-2.11.0.jar commons-lang3-3.12.0.j
+ ar commons-logging-1.2.jar commons-math3-3.6.1.jar commons-text-1.10.0.
+ jar config-1.3.0.jar decryptor-2022x-e59cbba6.jar eccpresso-all-11.14.j
+ ar error_prone_annotations-2.18.0.jar failureaccess-1.0.1.jar FcsClient
+ -R2024x.jar freehep-base-1.0.0.jar freehep-graphics2d-1.0.0.jar freehep
+ -graphicsio-1.0.0.jar freehep-graphicsio-emf-1.0.0.jar freehep-graphics
+ io-ps-1.0.0.jar gson-2.9.0.jar guava-32.0.1-jre.jar HTMLEditorEnterpris
+ e-22.jar httpclient-4.5.13.jar httpcore-4.4.13.jar httpmime-4.5.13.jar 
+ istack-commons-runtime-4.1.2.jar j2objc-annotations-2.8.jar jackson-ann
+ otations-2.15.2.jar jackson-core-2.15.2.jar jackson-core-asl-1.9.13.jar
+  jackson-databind-2.15.2.jar jakarta.activation-api-2.1.2.jar jakarta.x
+ ml.bind-api-4.0.0.jar javax.jmi-1.0.jar jaxb-api-2.2.11.jar jaxb-core-4
+ .0.3.jar jaxb-runtime-4.0.3.jar jhall-2.0_03.jar jide-action-3.7.13.jar
+  jide-charts-3.7.13.jar jide-common-3.7.13.jar jide-components-3.7.13.j
+ ar jide-diff-3.7.13.jar jide-dock-3.7.13.jar jide-editor-3.7.13.jar jid
+ e-gantt-3.7.13.jar jide-grids-3.7.13.jar jide-shortcut-3.7.13.jar jimi-
+ 1.0.jar jna-4.3.0.jar joda-time-2.9.9.jar json-20230618.jar jsr250-api-
+ 1.0.jar jsr305-2.0.1.jar jtidy-r938.jar junit-4.13.2.jar junit-jupiter-
+ api-5.9.0.jar JUnitParams-1.0.1.jar jxbrowser-7.30.3.jar jxbrowser-linu
+ x64-7.30.3.jar jxbrowser-linux64-arm-7.30.3.jar jxbrowser-mac-7.30.3.ja
+ r jxbrowser-mac-arm-7.30.3.jar jxbrowser-swing-7.30.3.jar jxbrowser-win
+ 64-7.30.3.jar kryo-esi-4.0.2.jar listenablefuture-9999.0-empty-to-avoid
+ -conflict-with-guava.jar log4j-1.2-api-2.17.1.jar log4j-api-2.17.1.jar 
+ log4j-core-2.17.1.jar log4j-slf4j-impl-2.17.1.jar lucene-analysis-commo
+ n-9.2.0.jar lucene-core-9.2.0.jar lucene-misc-9.2.0.jar lz4-java-1.8.0.
+ jar md-flexlm-2024.0.0-86-7321dda1.jar md-yfiles-2024.0.0-86-7321dda1.j
+ ar metrics-core-3.2.2.jar metrics-graphite-3.2.2.jar metrics-jmx-4.2.7.
+ jar netty-buffer-4.1.95.Final.jar netty-codec-4.1.95.Final.jar netty-co
+ dec-http-4.1.95.Final.jar netty-common-4.1.95.Final.jar netty-handler-4
+ .1.95.Final.jar netty-resolver-4.1.95.Final.jar netty-tcnative-classes-
+ 2.0.61.Final.jar netty-transport-4.1.95.Final.jar netty-transport-nativ
+ e-unix-common-4.1.95.Final.jar objenesis-3.2.jar org.apache.felix.scr-2
+ .0.10.jar org.eclipse.emf.common-2.28.0.jar org.eclipse.emf.ecore-2.33.
+ 0.jar org.eclipse.emf.ecore.xmi-2.18.0.jar org.eclipse.uml2.common-1.5.
+ 0.v201005031530.jar org.osgi.annotation.versioning-1.1.0.jar poi-5.2.2.
+ jar poi-ooxml-5.2.2.jar poi-ooxml-full-5.2.2.jar Saxon-HE-11.4.jar scal
+ a-java8-compat_2.13-1.0.0.jar scala-library-2.13.10.jar slf4j-api-1.7.2
+ 5.jar SparseBitSet-1.2.jar supercsv-1.52.jar tas-1.4.jar trove4j-3.0.3.
+ jar truezip-driver-zip-7.7.10.jar truezip-kernel-7.7.10.jar truezip-swi
+ ng-7.7.10.jar txw2-4.0.3.jar xercesImpl-2.12.2.jar xml-apis-ext-1.3.04.
+ jar xmlbeans-5.0.3.jar xmlgraphics-commons-2.7.jar xmlresolver-4.4.3-da
+ ta.jar xmlresolver-4.4.3.jar patch.jar com.nomagic.magicdraw.sysml-2024
+ .0.0-86-7321dda1.jar
+
