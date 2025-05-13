@@ -1,0 +1,41 @@
+name: Publish Plugin
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+
+    outputs:
+      v-version: ${{ steps.version.outputs.v-version }}
+
+    steps:
+      - name: Get next version
+        uses: reecetech/version-increment@2023.10.2
+        id: version
+        with:
+          release_branch: master
+          use_api: true
+
+  build_plugin:
+    needs: create_release
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Create the JAR file for upload
+
+      - name: Upload debian package to release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ needs.create_release.outputs.v-version }}
+          files: |
+            ./plugin.xml
+            ./*.jar

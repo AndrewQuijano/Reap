@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+        id="reap"
+        name="Risk Evaluation Assessment Plugin"
+        version="1.0"
+        provider-name="Andrew Quijano"
+        class="edu.mit.ll.reap.Reap">
+
+    <requires>
+        <api version="1.2"/>
+    </requires>
+
+    <runtime>
+        <library name="reap.jar"/>
+    </runtime>
+</plugin>
