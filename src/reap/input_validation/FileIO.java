@@ -34,7 +34,7 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.input_validation;
+package reap.input_validation;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.google.gson.Gson;

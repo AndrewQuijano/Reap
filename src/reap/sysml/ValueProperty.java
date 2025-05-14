@@ -34,7 +34,7 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.sysml;
+package reap.sysml;
 
 import com.nomagic.magicdraw.core.Project;
 import com.nomagic.magicdraw.openapi.uml.ReadOnlyElementException;
@@ -52,8 +52,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-import static edu.mit.ll.sysml.Tagging.getTagType;
-import static edu.mit.ll.sysml.logging.log;
+import static reap.sysml.Tagging.getTagType;
+import static reap.sysml.logging.log;
 
 
 public class ValueProperty {

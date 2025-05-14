@@ -34,7 +34,7 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.sysml;
+package reap.sysml;
 
 import com.nomagic.magicdraw.core.Project;
 import com.nomagic.magicdraw.openapi.uml.ReadOnlyElementException;

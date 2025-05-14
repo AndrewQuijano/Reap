@@ -34,16 +34,16 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.input_validation;
+package reap.input_validation;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.util.HashMap;
 
-import static edu.mit.ll.sysml.logging.log;
-import static edu.mit.ll.input_validation.FileIO.read_config_json;
-import static edu.mit.ll.input_validation.FileIO.read_validating_json;
+import static reap.sysml.logging.log;
+import static reap.input_validation.FileIO.read_config_json;
+import static reap.input_validation.FileIO.read_validating_json;
 
 
 public class InputValidation {

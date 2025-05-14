@@ -34,7 +34,7 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.reap;
+package reap.reap;
 
 import com.nomagic.magicdraw.actions.MDAction;
 import com.nomagic.magicdraw.core.Application;
@@ -43,12 +43,12 @@ import com.nomagic.magicdraw.openapi.uml.ReadOnlyElementException;
 import com.nomagic.magicdraw.uml.symbols.DiagramPresentationElement;
 import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Class;
 
-import edu.mit.ll.sysml.BDDInfo;
-import edu.mit.ll.sysml.InstInfo;
-import edu.mit.ll.probability.Gaussian;
-import edu.mit.ll.simulation_results.SimulationBlockSummary;
-import edu.mit.ll.simulation_results.SimulationOverallSummary;
-import edu.mit.ll.probability.Uniform;
+import reap.sysml.BDDInfo;
+import reap.sysml.InstInfo;
+import reap.probability.Gaussian;
+import reap.simulation_results.SimulationBlockSummary;
+import reap.simulation_results.SimulationOverallSummary;
+import reap.probability.Uniform;
 
 import javax.annotation.CheckForNull;
 import javax.swing.*;
@@ -62,24 +62,24 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import edu.mit.ll.ui.ConfigInput;
-import edu.mit.ll.ui.MainMenu;
-import edu.mit.ll.ui.SelectBlock;
-import edu.mit.ll.ui.SlotInput;
+import reap.ui.ConfigInput;
+import reap.ui.MainMenu;
+import reap.ui.SelectBlock;
+import reap.ui.SlotInput;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jfree.data.xy.XYSeriesCollection;
 
-import static edu.mit.ll.sysml.BDDInfo.*;
-import static edu.mit.ll.sysml.ValueProperty.*;
-import static edu.mit.ll.sysml.logging.log;
-import static edu.mit.ll.input_validation.InputValidation.*;
-import static edu.mit.ll.input_validation.FileIO.*;
-import static edu.mit.ll.plots.LineGraph.createDataset;
-import static edu.mit.ll.plots.LineGraph.createLineGraph;
-import static edu.mit.ll.plots.Toukey.createBoxAndWhiskerPlot;
-import static edu.mit.ll.reap.Reap.selectWorkingDirectory;
-import static edu.mit.ll.reap.Reap.showWorkingDirectoryDialog;
+import static reap.sysml.BDDInfo.*;
+import static reap.sysml.ValueProperty.*;
+import static reap.sysml.logging.log;
+import static reap.input_validation.InputValidation.*;
+import static reap.input_validation.FileIO.*;
+import static reap.plots.LineGraph.createDataset;
+import static reap.plots.LineGraph.createLineGraph;
+import static reap.plots.Toukey.createBoxAndWhiskerPlot;
+import static reap.reap.Reap.selectWorkingDirectory;
+import static reap.reap.Reap.showWorkingDirectoryDialog;
 
 public class OpenReap extends MDAction {
 

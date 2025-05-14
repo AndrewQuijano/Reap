@@ -34,26 +34,47 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.probability;
+package reap.sysml;
 
-import java.security.SecureRandom;
+import com.nomagic.magicdraw.core.Application;
+import com.nomagic.magicdraw.ui.notification.NotificationManager;
+import com.nomagic.magicdraw.ui.notification.NotificationSeverity;
 
-public class Uniform {
+import javax.swing.*;
+import java.util.Locale;
 
-    private final SecureRandom random = new SecureRandom();
-    private final int total_probability_space;
-
-    public Uniform(int total_probability_space) {
-        this.total_probability_space = total_probability_space;
+public class logging {
+    public static void log(String message, String title, String severity) {
+        if(severity == null) {
+            log(message, title, NotificationSeverity.INFO);
+        }
+        else if(severity.toLowerCase(Locale.ROOT).contains("w")) {
+            log(message, title, NotificationSeverity.WARNING);
+        }
+        else if(severity.toLowerCase(Locale.ROOT).contains("e")) {
+            log(message, title, NotificationSeverity.ERROR);
+        }
+        else {
+            log(message, "REAP Plugin Message", NotificationSeverity.INFO);
+        }
     }
 
-    public double get_probability(int event_space) {
-        double probability = (double) event_space / this.total_probability_space;
-        return Math.min(probability, 1.0);
+    public static void log(String message, String title, NotificationSeverity ns) {
+        System.out.println("log - " + message);
+        if(NotificationManager.getInstance() != null) {
+            NotificationManager nm = NotificationManager.getInstance();
+        }
+        else {
+            if(Application.getInstance().getGUILog() != null) {
+                Application.getInstance().getGUILog().showError(message);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, message);
+            }
+        }
     }
 
-    public boolean eventOccurred(double probability) {
-        int randomValue = random.nextInt(1, this.total_probability_space + 1);
-        return get_probability(randomValue) <= probability; // Check if the event occurs
+    public static void log(String message) {
+        log(message, "CSV Exporter Plugin Message", NotificationSeverity.INFO);
     }
 }

@@ -34,7 +34,7 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.reap;
+package reap.reap;
 
 import com.nomagic.actions.AMConfigurator;
 import com.nomagic.actions.ActionsCategory;

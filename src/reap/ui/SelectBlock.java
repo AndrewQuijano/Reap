@@ -34,7 +34,7 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.ui;
+package reap.ui;
 
 import com.nomagic.magicdraw.uml.symbols.DiagramPresentationElement;
 import com.nomagic.magicdraw.uml.symbols.PresentationElement;

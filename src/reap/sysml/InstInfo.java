@@ -34,7 +34,7 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.sysml;
+package reap.sysml;
 
 import com.nomagic.magicdraw.uml.symbols.shapes.ShapeElement;
 import com.nomagic.uml2.ext.jmi.helpers.ModelHelper;

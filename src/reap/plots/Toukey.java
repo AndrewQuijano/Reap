@@ -34,7 +34,7 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.plots;
+package reap.plots;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtils;
@@ -52,7 +52,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static edu.mit.ll.sysml.logging.log;
+import static reap.sysml.logging.log;
 
 
 public class Toukey {

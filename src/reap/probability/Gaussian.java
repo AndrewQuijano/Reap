@@ -34,7 +34,7 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.probability;
+package reap.probability;
 
 import java.security.SecureRandom;
 

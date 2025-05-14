@@ -34,7 +34,7 @@
  * SOFTWARE.
  */
 
-package edu.mit.ll.plots;
+package reap.plots;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtils;
