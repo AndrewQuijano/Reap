@@ -1,6 +1,24 @@
 # Risk Evaluation Assessment Plugin (REAP)
+
+## Distribution Statement
+DISTRIBUTION STATEMENT A. Approved for public release. Distribution is unlimited.
+This material is based upon work supported by the Dept of the Navy under Air
+Force Contract No. FA8702-15-D-0001 or FA8702-25-D-B002.
+Any opinions, findings, conclusions or recommendations expressed in this material
+are those of the author(s) and do not necessarily reflect the views of the Dept
+of the Navy.
+(c) 2024 Massachusetts Institute of Technology.
+The software/firmware is provided to you on an As-Is basis.
+Delivered to the U.S. Government with Unlimited Rights, as defined in DFARS Part
+252.227-7013 or 7014 (Feb 2014).
+Notwithstanding any copyright notice, U.S. Government rights in this work are
+defined by DFARS 252.227-7013 or DFARS 252.227-7014 as detailed above.
+Use of this work other than as specifically authorized by the U.S. Government may
+violate any copyrights that exist in this work.
+
+## Overview
 This plugin is debuted in the paper `REAP the Rewards: Bridging Risk Assessment and Secure Application Development Practices`. 
-This is the first iteration of the plugin considering a defender model confirming certain cybersecurity controls are in place, 
+This is the first iteration of the plugin considering a defender model confirming certain cybersecurity controls are in place  
 and be able to model how changes in security properties can impact the risk posture of an application. REAP also includes checking compliance with RTO and RPO 
 as to better help application owners determine the resilience of their application.
 
@@ -93,7 +111,7 @@ We want to create a MagicDraw plugin that takes in a SysML diagram that shows a 
 Our plugin first enforces that certain values be present in the in-scope blocks and associations.
 
 Then using the `config.json` with its provided assumptions, make estimates on how often/when certain components would be compromised by.
-We want to show that adding certain security controls, all else being equal, the likelihood of a successful cyberattack decreases.
+We want to show that by adding certain security controls, all else being equal, the likelihood of a successful cyberattack decreases.
 
 
 ## Plug-In Use
@@ -103,7 +121,7 @@ Make sure to do this while the BDD to use is the currently opened diagram.
 **If you do NOT see the hacker icon, you likely would see an accompanying pop-up showing an error with your input files!**
 
 **If you are NOT running from the IDE** the working directory by default is `C:\Program Files\MagicDraw\plugins`. 
-It is highly encouraged you to clone REAP and have the REAP plugin change working directory to where you cloned REAP. 
+It is highly encouraged you to clone REAP and have the REAP plugin change the working directory to where you cloned REAP. 
 This will allow you to provide your own `config.json` and `blocks.json`, and a non-admin place to store the outputs.
 
 ### Configuration Files
@@ -200,7 +218,7 @@ e.g., invalid distribution or negative number of days.
 #### Adjust Security Property Weights
 This screen allows you to edit the initial weights from `blocks.json` file. 
 **If you want to add more security properties, you need to update the `blocks.json` file**. 
-You can flip through the security properties on the bottom left with the pages. 
+You can flip through the security properties on the bottom left of the pages. 
 When you select OK to update the weights, the GUI will highlight red invalid inputs, which is providing a negative weight/greater than 1. 
 ![Security Property Weights](images/SecurityProperties.png)
 
@@ -211,7 +229,7 @@ You can select multiple blocks using the CTRL key. All blocks highlighted blue m
 
 #### Run Simulation
 Assuming you have already selected at least one block, and you are content with the configurations, run the simulation(s). 
-Upon the simulation completing, the GUI will return, so you can either more simulations, or modify your inputs before re-running.
+Upon the simulation completing, the GUI will return, so you can either more simulations or modify your inputs before re-running.
 
 The general workflow for the simulation is:
 
@@ -223,7 +241,7 @@ The general workflow for the simulation is:
    * We assume no block starts compromised
    * For each day the following is completed
      * Check if we should add any new blocks to be a possible target for compromise. If a block is compromised, we add all its neighbors as possible victims of cyber-attack
-     * For all blocks that are in-scope of attack, roll the die and determine if the cyber-attack was successful. This is based on `threat_likelihood` and any modifiers from security properties.
+     * For all blocks that are in-scope of an attack, roll the die and determine if the cyber-attack was successful. This is based on `threat_likelihood` and any modifiers from security properties.
      * For all blocks, we roll a die based on `patch_likelihood`, if successful, we assume the block has recovered from a cyberattack.
    * Once all simulations are complete, all outputs are stored in a directory with a timestamp of when the simulation was executed.
 
@@ -249,8 +267,4 @@ The folder will contain the following:
 
 ### Image sources
 I got the 32 x 32 pixel image of the hacker from [ShareIcon](https://www.shareicon.net/hacker-101375). 
-I got the MITLL logo from [here](https://www.ll.mit.edu/about/history/lincoln-laboratory-logo)
-
-### Future work
-1. Have the new home for REAP be [here](https://github.com/mit-ll) with the MIT License
-2. Perhaps REAP can automatically determine what the security properties are
+The MITLL logo was obtained from [here](https://www.ll.mit.edu/about/history/lincoln-laboratory-logo).
