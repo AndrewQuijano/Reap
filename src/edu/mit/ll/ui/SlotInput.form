@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+DISTRIBUTION STATEMENT A. Approved for public release. Distribution is unlimited.
+This material is based upon work supported by the Dept of the Navy under Air
+Force Contract No. FA8702-15-D-0001 or FA8702-25-D-B002.
+Any opinions, findings, conclusions or recommendations expressed in this material
+are those of the author(s) and do not necessarily reflect the views of the Dept
+of the Navy.
+(c) 2024 Massachusetts Institute of Technology.
+The software/firmware is provided to you on an As-Is basis.
+Delivered to the U.S. Government with Unlimited Rights, as defined in DFARS Part
+252.227-7013 or 7014 (Feb 2014).
+Notwithstanding any copyright notice, U.S. Government rights in this work are
+defined by DFARS 252.227-7013 or DFARS 252.227-7014 as detailed above.
+Use of this work other than as specifically authorized by the U.S. Government may
+violate any copyrights that exist in this work.
+-->
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="edu.mit.ll.ui.SlotInput">
+  <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="48" y="54" width="604" height="297"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="94766" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <hspacer id="98af6">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <grid id="9538f" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="e7465" class="javax.swing.JButton" binding="buttonOK">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="OK"/>
+                </properties>
+              </component>
+              <component id="5723f" class="javax.swing.JButton" binding="buttonCancel">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Cancel"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="847ee" class="javax.swing.JButton" binding="buttonLeft">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="← Back"/>
+            </properties>
+          </component>
+          <component id="6c497" class="javax.swing.JButton" binding="buttonRight">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Next →"/>
+            </properties>
+          </component>
+          <component id="c950e" class="javax.swing.JLabel" binding="pageHolder">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Page Holder"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="e3588" binding="mainPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="f1166" class="javax.swing.JLabel" binding="nameHolder">
+            <constraints/>
+            <properties>
+              <background color="-12828863"/>
+              <font size="16"/>
+              <horizontalAlignment value="0"/>
+              <text value="Name"/>
+              <verticalAlignment value="1"/>
+            </properties>
+          </component>
+          <component id="9c4da" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <background color="-12828863"/>
+              <font size="16"/>
+              <horizontalAlignment value="4"/>
+              <horizontalTextPosition value="4"/>
+              <text value="🛈"/>
+              <toolTipText value="&lt;html&gt;&#10;This menu will allows you to cycle through created instances&lt;br&gt;&#10;and set their value properties.&lt;br&gt;&#10;Any inputted values that are invalid or left blank will be&lt;br&gt;&#10;ignored, and their associated slots will be left empty.&lt;br&gt;&#10;&lt;/html&gt;"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

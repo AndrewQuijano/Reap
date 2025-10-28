@@ -1,0 +1,12 @@
+{
+  "distribution" : "normal",
+  "uniform_size" : 100,
+  "threat_likelihood" : 0.50,
+  "patch_likelihood" : 0.50,
+  "days" : 300,
+  "simulations" : 30,
+  "backup_frequency" : 10,
+  "rpo" : 20,
+  "rto" : 10,
+  "populate_blocks" : false
+}
