@@ -15,7 +15,7 @@
  * violate any copyrights that exist in this work.
  */
 
-package edu.mit.ll.probability;
+package edu.mit.anon.probability;
 
 import java.security.SecureRandom;
 

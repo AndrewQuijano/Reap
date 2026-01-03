@@ -15,16 +15,18 @@
  * violate any copyrights that exist in this work.
  */
 
-package edu.mit.ll.ui;
+package edu.mit.anon.ui;
 
 import javax.swing.*;
+
+import static edu.mit.anon.input_validation.InputValidation.check_config_key;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import static edu.mit.ll.input_validation.InputValidation.check_config_key;
 
 
 public class ConfigInput extends JDialog {

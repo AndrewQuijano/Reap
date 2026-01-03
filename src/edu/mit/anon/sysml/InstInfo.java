@@ -15,7 +15,7 @@
  * violate any copyrights that exist in this work.
  */
 
-package edu.mit.ll.sysml;
+package edu.mit.anon.sysml;
 
 import com.nomagic.magicdraw.uml.symbols.shapes.ShapeElement;
 import com.nomagic.uml2.ext.jmi.helpers.ModelHelper;

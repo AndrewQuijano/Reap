@@ -15,7 +15,7 @@
  * violate any copyrights that exist in this work.
  */
 
-package edu.mit.ll.sysml;
+package edu.mit.anon.sysml;
 
 import com.nomagic.magicdraw.core.Project;
 import com.nomagic.magicdraw.openapi.uml.ReadOnlyElementException;

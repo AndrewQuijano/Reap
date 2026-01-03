@@ -15,7 +15,7 @@
  * violate any copyrights that exist in this work.
  */
 
-package edu.mit.ll.ui;
+package edu.mit.anon.ui;
 
 import com.nomagic.magicdraw.uml.symbols.DiagramPresentationElement;
 import com.nomagic.magicdraw.uml.symbols.PresentationElement;

@@ -15,7 +15,7 @@
  * violate any copyrights that exist in this work.
  */
 
-package edu.mit.ll.reap;
+package edu.mit.anon.reap;
 
 import com.nomagic.magicdraw.actions.MDAction;
 import com.nomagic.magicdraw.core.Application;
@@ -24,15 +24,31 @@ import com.nomagic.magicdraw.openapi.uml.ReadOnlyElementException;
 import com.nomagic.magicdraw.uml.symbols.DiagramPresentationElement;
 import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Class;
 
-import edu.mit.ll.sysml.BDDInfo;
-import edu.mit.ll.sysml.InstInfo;
-import edu.mit.ll.probability.Gaussian;
-import edu.mit.ll.simulation_results.SimulationBlockSummary;
-import edu.mit.ll.simulation_results.SimulationOverallSummary;
-import edu.mit.ll.probability.Uniform;
+import edu.mit.anon.probability.Gaussian;
+import edu.mit.anon.probability.Uniform;
+import edu.mit.anon.simulation_results.SimulationBlockSummary;
+import edu.mit.anon.simulation_results.SimulationOverallSummary;
+import edu.mit.anon.sysml.BDDInfo;
+import edu.mit.anon.sysml.InstInfo;
+import edu.mit.anon.ui.ConfigInput;
+import edu.mit.anon.ui.MainMenu;
+import edu.mit.anon.ui.SelectBlock;
+import edu.mit.anon.ui.SlotInput;
 
 import javax.annotation.CheckForNull;
 import javax.swing.*;
+
+import static edu.mit.anon.input_validation.FileIO.*;
+import static edu.mit.anon.input_validation.InputValidation.*;
+import static edu.mit.anon.plots.LineGraph.createDataset;
+import static edu.mit.anon.plots.LineGraph.createLineGraph;
+import static edu.mit.anon.plots.Toukey.createBoxAndWhiskerPlot;
+import static edu.mit.anon.reap.Reap.selectWorkingDirectory;
+import static edu.mit.anon.reap.Reap.showWorkingDirectoryDialog;
+import static edu.mit.anon.sysml.BDDInfo.*;
+import static edu.mit.anon.sysml.ValueProperty.*;
+import static edu.mit.anon.sysml.logging.log;
+
 import java.awt.event.ActionEvent;
 import java.io.*;
 import java.nio.file.FileSystems;
@@ -43,24 +59,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import edu.mit.ll.ui.ConfigInput;
-import edu.mit.ll.ui.MainMenu;
-import edu.mit.ll.ui.SelectBlock;
-import edu.mit.ll.ui.SlotInput;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jfree.data.xy.XYSeriesCollection;
-
-import static edu.mit.ll.sysml.BDDInfo.*;
-import static edu.mit.ll.sysml.ValueProperty.*;
-import static edu.mit.ll.sysml.logging.log;
-import static edu.mit.ll.input_validation.InputValidation.*;
-import static edu.mit.ll.input_validation.FileIO.*;
-import static edu.mit.ll.plots.LineGraph.createDataset;
-import static edu.mit.ll.plots.LineGraph.createLineGraph;
-import static edu.mit.ll.plots.Toukey.createBoxAndWhiskerPlot;
-import static edu.mit.ll.reap.Reap.selectWorkingDirectory;
-import static edu.mit.ll.reap.Reap.showWorkingDirectoryDialog;
 
 public class OpenReap extends MDAction {
 

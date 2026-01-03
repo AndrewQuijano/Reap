@@ -15,7 +15,7 @@
  * violate any copyrights that exist in this work.
  */
 
-package edu.mit.ll.sysml;
+package edu.mit.anon.sysml;
 
 import com.nomagic.magicdraw.core.Project;
 import com.nomagic.magicdraw.openapi.uml.ReadOnlyElementException;
@@ -28,13 +28,13 @@ import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Class;
 
 import javax.swing.*;
 
+import static edu.mit.anon.sysml.Tagging.getTagType;
+import static edu.mit.anon.sysml.logging.log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-
-import static edu.mit.ll.sysml.Tagging.getTagType;
-import static edu.mit.ll.sysml.logging.log;
 
 
 public class ValueProperty {

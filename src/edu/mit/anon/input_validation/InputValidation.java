@@ -15,16 +15,17 @@
  * violate any copyrights that exist in this work.
  */
 
-package edu.mit.ll.input_validation;
+package edu.mit.anon.input_validation;
 
 import javax.swing.*;
+
+import static edu.mit.anon.input_validation.FileIO.read_config_json;
+import static edu.mit.anon.input_validation.FileIO.read_validating_json;
+import static edu.mit.anon.sysml.logging.log;
+
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.util.HashMap;
-
-import static edu.mit.ll.sysml.logging.log;
-import static edu.mit.ll.input_validation.FileIO.read_config_json;
-import static edu.mit.ll.input_validation.FileIO.read_validating_json;
 
 
 public class InputValidation {
