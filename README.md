@@ -265,6 +265,3 @@ The folder will contain the following:
 * `RPO_RTO_Compliance_rto.xlsx` - An Excel workbook that summarizes how RTO/RPO compliant each block is given all the simulation results.
 * Various graphs - There is an X-Y plot tracking days vs. number of blocks compromised/in-scope. Also, a Box and Whisker plot based on the `simulation_block_view.xlsx` metrics
 
-### Image sources
-I got the 32 x 32 pixel image of the hacker from [ShareIcon](https://www.shareicon.net/hacker-101375). 
-The MITLL logo was obtained from [here](https://www.ll.mit.edu/about/history/lincoln-laboratory-logo).

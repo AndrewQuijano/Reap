@@ -1,15 +1,3 @@
-// ------------------------------------------------------------------------------
-// --  ______  __________
-// --  \    / /_____    /
-// --   |  | /      |  |
-// --   |  |   --   |  |
-// --   |  |  |\/|  |  |
-// --   |  |  |/\|  |  |
-// --   |  |  |/\|  |  |
-// --   |  |   --   |  |
-// --   |  |_____ / |  |
-// --  /_________/ /____\
-// ------------------------------------------------------------------------------
 /*
  * DISTRIBUTION STATEMENT A. Approved for public release. Distribution is unlimited.
  * This material is based upon work supported by the Dept of the Navy under Air
@@ -32,14 +20,11 @@ package edu.mit.ll.ui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
-import static edu.mit.ll.input_validation.InputValidation.check_config_key;
 
 
-public class ConfigInput extends JDialog {
+public class SlotInput extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -57,11 +42,18 @@ public class ConfigInput extends JDialog {
     final Color invalidColor = new Color(255, 141, 141);
     final Color validColor = new JTextField().getBackground();
 
-    private final HashMap<String, Object> config;
+    private final HashMap<String, HashMap<String, Double>> security_weights;
+
+    // The page aligns with a specific security property opened in the GUI,
+    // e.g., encryption-in-transit, encryption-at-rest, etc.
+    private int current_page = 0;
+    private final String [] security_property_page_number;
 
     // For now, the input is the config_file.json
-    public ConfigInput(HashMap<String, Object> config) {
-        this.config = config;
+    public SlotInput(HashMap<String, HashMap<String, Double>> security_weights) {
+        // Thing I will allow user to modify via GUI
+        this.security_weights = security_weights;
+        security_property_page_number = security_weights.keySet().toArray(new String[0]);
 
         setContentPane(contentPane);
         setModal(true);
@@ -75,7 +67,7 @@ public class ConfigInput extends JDialog {
         scrollPane = new JScrollPane();
         mainPanel.add(scrollPane);
 
-        setNameHolder("Modify Config Options");
+        setNameHolder("Modify " + security_property_page_number[current_page] + " Weights");
         setPageHolder();
         fillSlotList();
 
@@ -120,28 +112,28 @@ public class ConfigInput extends JDialog {
         contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
-    private void onOK() {
-        if(validSlotValues()) {
+    private boolean updateSlots() {
+        boolean valid_slots = validSlotValues();
+        if(valid_slots) {
+            String current_security_property = security_property_page_number[current_page];
+            HashMap<String, Double> temp = security_weights.get(current_security_property);
+
             for (JPanel panel : panels) {
                 JLabel label = (JLabel) panel.getComponent(0);
                 JTextField textField = (JTextField) panel.getComponent(1);
 
                 String key = label.getText();
-                String value = textField.getText().toLowerCase();
-
-                switch (key) {
-                    case "uniform_size", "days", "simulations", "backup_frequency", "rto", "rpo" -> {
-                        Integer intValue = Integer.parseInt(value);
-                        config.put(key, intValue);
-                    }
-                    case "threat_likelihood", "patch_likelihood" -> {
-                        Double doubleValue = Double.valueOf(value);
-                        config.put(key, doubleValue);
-                    }
-                    case "populate_blocks" -> config.put(key, Boolean.parseBoolean(value));
-                    default -> config.put(key, value);
-                }
+                String valueStr = textField.getText();
+                Double value = Double.valueOf(valueStr);
+                temp.put(key, value);
             }
+            security_weights.put(current_security_property, temp);
+        }
+        return valid_slots;
+    }
+
+    private void onOK() {
+        if(updateSlots()) {
             dispose();
         }
     }
@@ -151,21 +143,29 @@ public class ConfigInput extends JDialog {
     }
 
     private void setPageHolder() {
-        // Should only be one page of config, hard coding this
-        int current_page = 0;
-        pageHolder.setText((current_page + 1) + " / " + (current_page + 1));
+        pageHolder.setText((current_page + 1) + " / " + security_weights.size());
     }
 
     private void onLeft() {
+        updateSlots();
+        current_page--;
+        if(current_page < 0) {
+            current_page = security_weights.size() - 1;
+        }
         resetWindow();
     }
 
     private void onRight() {
+        updateSlots();
+        current_page++;
+        if(current_page == security_weights.size()) {
+            current_page = 0;
+        }
         resetWindow();
     }
 
     private void resetWindow() {
-        setNameHolder("Modify Config options");
+        setNameHolder("Modify " + security_property_page_number[current_page] + " weights");
         setPageHolder();
         fillSlotList();
     }
@@ -184,9 +184,12 @@ public class ConfigInput extends JDialog {
         scrollList.removeAll();
 
         // This is the data structure I want people to dynamically update from JSON if needed
-        for (Map.Entry<String, Object> entry : config.entrySet()) {
+        String current_security_property = security_property_page_number[current_page];
+        HashMap<String, Double> temp = security_weights.get(current_security_property);
+
+        for (Map.Entry<String, Double> entry : temp.entrySet()) {
             String key = entry.getKey();
-            Object value = entry.getValue();
+            Double value = entry.getValue();
 
             // labels creates both the title of the text to the left
             labels.add(new JLabel(key));
@@ -241,87 +244,51 @@ public class ConfigInput extends JDialog {
 
     // Confirm the input is OK
     private boolean validSlotValues() {
+        double value;
         boolean ok_slots = true;
 
         for (JPanel panel : panels) {
-            JLabel key_label = (JLabel) panel.getComponent(0);
+            JLabel label = (JLabel) panel.getComponent(0);
             JTextField textField = (JTextField) panel.getComponent(1);
-            String key = key_label.getText();
-            // Careful you need to make the parseInt/parseDouble here too
-            String value = textField.getText().toLowerCase();
 
-            switch (key) {
-                case "uniform_size", "days", "simulations", "backup_frequency", "rto", "rpo" -> {
-                    try {
-                        Integer intValue = Integer.parseInt(value);
-                        // I need to confirm this value is OK for the config, recycle method in Input Validation
-                        if (check_config_key(key, intValue)) {
-                            textField.setBackground(validColor);
-                        } else {
-                            ok_slots = false;
-                            textField.setBackground(invalidColor);
-                        }
-                    } catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null, "Config: REAP expects an Integer for the " + key + " key");
+            String key = label.getText();
+            String valueStr = textField.getText();
+
+            // I need to confirm this value is a valid probability, turn red if not
+            try {
+                value = Double.parseDouble(valueStr);
+                if (key.equals("None")) {
+                    if (value != 1.0) {
+                        JOptionPane.showMessageDialog(null, "None MUST be set 1.0, since no security property should NOT decrease risk!");
                         ok_slots = false;
                         textField.setBackground(invalidColor);
                     }
-                }
-                case "threat_likelihood", "patch_likelihood" -> {
-                    // I need to confirm this value is OK for the config, recycle method in Input Validation
-                    try {
-                        Double doubleValue = Double.valueOf(value);
-                        if (check_config_key(key, doubleValue)) {
-                            textField.setBackground(validColor);
-                        } else {
-                            ok_slots = false;
-                            textField.setBackground(invalidColor);
-                        }
-                    } catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null, "Config: REAP expects an Decimal for the " + key + " key");
-                        ok_slots = false;
-                        textField.setBackground(invalidColor);
-                    }
-                }
-                case "populate_blocks" -> {
-                    if (value.equalsIgnoreCase("true")) {
-                        Boolean boolValue = Boolean.parseBoolean(value);
-                        if (check_config_key(key, boolValue)) {
-                            textField.setBackground(validColor);
-                        } else {
-                            ok_slots = false;
-                            textField.setBackground(invalidColor);
-                        }
-                    } else if (value.equalsIgnoreCase("false")) {
-                        Boolean boolValue = Boolean.parseBoolean(value);
-                        if (check_config_key(key, boolValue)) {
-                            textField.setBackground(validColor);
-                        } else {
-                            ok_slots = false;
-                            textField.setBackground(invalidColor);
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Config: REAP expects an Boolean for the " + key + " key, expecting string 'true' or 'false'");
-                        ok_slots = false;
-                        textField.setBackground(invalidColor);
-                    }
-                }
-                default -> {
-                    // I need to confirm this value is OK for the config, recycle method in Input Validation
-                    if (check_config_key(key, value)) {
+                    else {
                         textField.setBackground(validColor);
-                    } else {
+                    }
+                }
+                else {
+                    if (value < 0 || value > 1) {
+                        JOptionPane.showMessageDialog(null, "The security weights must be a number between 0 and 1.");
                         ok_slots = false;
                         textField.setBackground(invalidColor);
                     }
+                    else {
+                        textField.setBackground(validColor);
+                    }
                 }
+            }
+            catch (NumberFormatException e) {
+                ok_slots = false;
+                textField.setBackground(invalidColor);
+                JOptionPane.showMessageDialog(null, "The security weights must be a number between 0 and 1.");
             }
         }
         return ok_slots;
     }
 
     // Get the latest value from the text fields
-    public HashMap<String, Object> getConfig() {
-        return this.config;
+    public HashMap<String, HashMap<String, Double>> getCurrentWeights() {
+        return this.security_weights;
     }
 }

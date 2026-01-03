@@ -19,8 +19,8 @@ violate any copyrights that exist in this work.
         id="reap"
         name="Risk Evaluation Assessment Plugin"
         version="1.0"
-        provider-name="Andrew Quijano"
-        class="edu.mit.ll.reap.Reap">
+        provider-name="Anonymous Researcher"
+        class="edu.mit.anon.reap.Reap">
 
     <requires>
         <api version="1.2"/>
