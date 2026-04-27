@@ -1,0 +1,19 @@
+Documentation:
+  - '**/*.md'
+  - '**/*.png'
+  - LICENSE
+
+Github-files:
+  - .github/**
+
+UI:
+  - 'src/edu/mit/ll/ui/**'
+
+SysML:
+  - 'src/edu/mit/ll/sysml/**'
+
+Input-Validation:
+  - 'src/edu/mit/ll/input_validation/**'
+
+REAP-Core:
+  - 'src/edu/mit/ll/reap/**'
